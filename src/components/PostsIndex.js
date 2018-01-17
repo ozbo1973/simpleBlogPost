@@ -22,12 +22,14 @@ class PostsIndex extends Component {
   render() {
     console.log(this.props.posts);
     return (
-      <div>
-        <h1>Posts Index</h1>
-        <Link className="btn btn-primary" to="/posts/new">
-          Add Post
-        </Link>
-        <ul>{this.renderPosts()}</ul>
+      <div className="post-index component-top">
+        <h1>My Posts List</h1>
+        <div className="text-xs-right">
+          <Link className="btn btn-primary" to="/posts/new">
+            Add Post
+          </Link>
+        </div>
+        <ul className="list-group">{this.renderPosts()}</ul>
       </div>
     );
   }

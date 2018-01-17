@@ -7,11 +7,13 @@ import { createPost } from '../actions';
 
 class PostsNew extends Component {
   renderField(field) {
+    const { meta: { touched, error } } = field;
+    const errorClassName = `${touched && error ? 'has-danger' : ''}`;
     return (
-      <div>
+      <div className={errorClassName}>
         <label>{field.label}:</label>
-        <input type="text" {...field.input} />
-        <p>{field.meta.error}</p>
+        <input className="form-control" type="text" {...field.input} />
+        <p className="text-help">{touched ? error : ''}</p>
       </div>
     );
   }
@@ -26,7 +28,9 @@ class PostsNew extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.onFormSubmit.bind(this))}>
+      <form
+        className="form-group component-top"
+        onSubmit={handleSubmit(this.onFormSubmit.bind(this))}>
         <h1>New Blog Post</h1>
         <Field
           name="title"
@@ -43,10 +47,10 @@ class PostsNew extends Component {
           label="Blog Content"
           component={this.renderField}
         />
-        <button className="btn" type="submit">
+        <button className="btn btn-success" type="submit">
           Save
         </button>
-        <Link className="btn" to="/">
+        <Link className="btn btn-danger" to="/">
           Cancel
         </Link>
       </form>

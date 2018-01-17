@@ -1,0 +1,30 @@
+.btn {
+  margin-left: 1rem;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.component-top {
+  margin-top: 10px;
+}
+
+.post-show {
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: lightgrey;
+}
+.post-show h3 {
+  text-align: center;
+}
+.post-show p {
+  background-color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.post-index ul {
+  margin-top: 2rem;
+}
