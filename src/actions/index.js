@@ -21,7 +21,7 @@ export function createPost(values, callback) {
     .post(`${ROOT_URL}/posts/${API_KEY}`, values)
     .then(() => callback());
   return {
-    type: CREATE_POSTS,
+    type: CREATE_POST,
     payload: request
   };
 }
